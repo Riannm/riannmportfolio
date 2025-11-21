@@ -59,8 +59,8 @@ const Portfolio = () => {
           {projects.map((project, idx) => (
             <Card
               key={idx}
-              className="bg-card border-border hover:border-primary/50 transition-all hover-scale animate-fade-in"
-              style={{ animationDelay: `${idx * 100}ms` }}
+              className="bg-card border-border hover:border-primary/50 smooth-transition hover-lift animate-fade-in-up"
+              style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <CardHeader>
                 <CardTitle className="text-xl">{project.title}</CardTitle>

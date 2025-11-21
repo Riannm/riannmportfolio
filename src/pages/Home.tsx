@@ -15,41 +15,41 @@ const Home = () => {
         <div className="max-w-7xl mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Content */}
-            <div className="space-y-8 animate-fade-in">
-              <div className="space-y-4">
+            <div className="space-y-8 animate-fade-in-up">
+              <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  <span className="text-foreground">Riann </span>
-                  <span className="text-primary">Matheus</span>
+                  <span className="text-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>Riann </span>
+                  <span className="text-primary animate-fade-in" style={{ animationDelay: "0.3s" }}>Matheus</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+                <p className="text-xl md:text-2xl text-muted-foreground font-medium animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
                   Desenvolvedor Fullstack
                 </p>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
                 Crio sites, sistemas web e soluções digitais que transformam ideias em produtos reais.
               </p>
 
-              <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
                 Especializado em sites institucionais, landing pages, sistemas com login, CRUD, dashboards, blogs e chatbots para WhatsApp. 
                 Experiência prática desenvolvendo projetos reais e escaláveis, com foco em performance, segurança e experiência do usuário.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button asChild size="lg" className="group">
+              <div className="flex flex-wrap gap-4 pt-4 animate-fade-in-up" style={{ animationDelay: "0.7s" }}>
+                <Button asChild size="lg" className="group smooth-transition hover-lift">
                   <NavLink to="/portfolio">
                     Ver Projetos
-                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
                   </NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="smooth-transition hover-lift">
                   <NavLink to="/contact">Solicitar Orçamento</NavLink>
                 </Button>
               </div>
             </div>
 
             {/* Profile Photo */}
-            <div className="relative animate-fade-in lg:animate-scale-in">
+            <div className="relative animate-fade-in lg:animate-scale-in-center animate-float">
               <div className="relative w-full max-w-md mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-tech-purple rounded-3xl blur-3xl opacity-30" />
                 <div className="relative bg-card-bg rounded-3xl p-2 border border-border">
@@ -93,7 +93,8 @@ const Home = () => {
             ].map((category, idx) => (
               <div
                 key={idx}
-                className="bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all hover-scale"
+                className="bg-card rounded-2xl p-6 border border-border hover:border-primary/50 smooth-transition hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${idx * 0.15}s` }}
               >
                 <category.icon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-4">{category.title}</h3>

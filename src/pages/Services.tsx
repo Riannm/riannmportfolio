@@ -89,12 +89,12 @@ const Services = () => {
           {services.map((service, idx) => (
             <Card
               key={idx}
-              className={`group relative bg-card border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in overflow-hidden ${
+              className={`group relative bg-card border-2 hover:border-primary/50 smooth-transition hover-lift animate-fade-in-up overflow-hidden ${
                 service.highlight 
                   ? "border-primary shadow-lg ring-4 ring-primary/10" 
                   : "border-border"
               }`}
-              style={{ animationDelay: `${idx * 100}ms` }}
+              style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Highlight Badge */}
               {service.highlight && (
@@ -188,7 +188,7 @@ const Services = () => {
                 bgColor: "bg-green-500/10",
               },
             ].map((item, idx) => (
-              <Card key={idx} className="bg-card border-border hover:border-primary/50 transition-all hover:shadow-lg text-center p-8">
+              <Card key={idx} className="bg-card border-border hover:border-primary/50 smooth-transition hover-lift text-center p-8 animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 ${item.bgColor} ${item.color}`}>
                   <item.icon className="w-8 h-8" />
                 </div>
