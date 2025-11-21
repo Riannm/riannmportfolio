@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# Riann Matheus - Portfolio
 
-## Project info
+Portfolio profissional completo desenvolvido por Riann Matheus, Desenvolvedor Fullstack especializado em sites institucionais, landing pages, sistemas com login, CRUD, dashboards, blogs e chatbots para WhatsApp.
 
-**URL**: https://lovable.dev/projects/d5793e31-0e29-4ad1-963b-d801f3f25200
+## Visão Geral
 
-## How can I edit this code?
+Este é um portfólio moderno e responsivo que demonstra minhas habilidades como desenvolvedor fullstack. O site inclui seções completas sobre meus serviços, projetos, experiência e formas de contato.
 
-There are several ways of editing your application.
+### Principais Recursos
 
-**Use Lovable**
+- **Design Responsivo**: Totalmente otimizado para mobile, tablet e desktop
+- **Navegação Intuitiva**: Menu responsivo com hamburger para dispositivos móveis
+- **Páginas Completas**: Home, Sobre, Portfólio, Serviços, Contato e Página de Links
+- **Sistema de Contato**: Formulário de contato que redireciona para WhatsApp com mensagem pré-preenchida
+- **Página de Links**: Página dedicada com botões para contato direto, portfólio e Lovable
+- **Integração WhatsApp**: Links para WhatsApp com mensagens pré-definidas em múltiplos locais
+- **Botão Flutuante WhatsApp**: Botão fixo para contato direto via WhatsApp
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d5793e31-0e29-4ad1-963b-d801f3f25200) and start prompting.
+## Tecnologias Utilizadas
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React** - Biblioteca JavaScript para interfaces de usuário
+- **TypeScript** - Superset do JavaScript com tipagem estática
+- **Vite** - Ferramenta de build rápida para projetos modernos
+- **Tailwind CSS** - Framework CSS utilitário para desenvolvimento rápido
+- **shadcn/ui** - Componentes acessíveis e estilizáveis
+- **Lucide React** - Ícones SVG leves e consistentes
+- **React Router DOM** - Navegação e roteamento entre páginas
+- **TanStack Query** - Gerenciamento de estado assíncrono e caching
 
-**Use your preferred IDE**
+## Funcionalidades
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Página Home
+- Seção hero com apresentação profissional
+- Seção de tecnologias e habilidades
+- Layout responsivo com animações suaves
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Página de Portfólio
+- Cards interativos com projetos reais
+- Descrições detalhadas dos projetos
+- Links para demos e repositórios (quando aplicável)
 
-Follow these steps:
+### Página de Serviços
+- Cards de serviços com destaques
+- Descrições completas de cada serviço oferecido
+- Layout organizado e visualmente atraente
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Página de Contato
+- Formulário de contato integrado com WhatsApp
+- Informações de contato alternativas
+- Links para redes sociais
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Página de Links
+- Botões diretos para contato, portfólio e Lovable
+- Design limpo e focado na ação
+- Imagem de perfil profissional
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Instalação e Execução
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm, yarn ou bun
+
+### Passos para Execução
+
+```bash
+# Clone o repositório
+git clone https://github.com/Riannm/riannmportfolio.git
+
+# Navegue até o diretório do projeto
+cd riannmportfolio
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Estrutura do Projeto
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/     # Componentes reutilizáveis
+├── pages/         # Páginas do aplicativo
+├── assets/        # Imagens e recursos estáticos
+├── hooks/         # Hooks personalizados
+└── lib/          # Funções utilitárias
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deploy
 
-## What technologies are used for this project?
+O projeto está configurado para deploy em plataformas como Vercel, Netlify ou GitHub Pages.
 
-This project is built with:
+### Build de Produção
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+```
 
-## How can I deploy this project?
+## Contribuição
 
-Simply open [Lovable](https://lovable.dev/projects/d5793e31-0e29-4ad1-963b-d801f3f25200) and click on Share -> Publish.
+Este é um projeto pessoal de portfólio, mas sugestões de melhoria são bem-vindas através de issues.
 
-## Can I connect a custom domain to my Lovable project?
+## Autor
 
-Yes, you can!
+**Riann Matheus**
+- [GitHub](https://github.com/Riannm)
+- [LinkedIn](https://www.linkedin.com/in/riann-costa/)
+- [Instagram](https://www.instagram.com/riannmatheus/)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Licença
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Este projeto está licenciado sob os termos descritos nos arquivos do projeto.
