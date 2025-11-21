@@ -75,17 +75,17 @@ const Services = () => {
             <Sparkles className="w-4 h-4" />
             Soluções Digitais Completas
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
             <span className="text-foreground">Serviços</span>{" "}
             <span className="text-primary">& Soluções</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Desenvolvimento web profissional para empresas e empreendedores que buscam presença digital de qualidade e resultados reais
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {services.map((service, idx) => (
             <Card
               key={idx}
@@ -111,7 +111,7 @@ const Services = () => {
                 }`}>
                   <service.icon className="w-8 h-8" />
                 </div>
-                <CardTitle className="text-2xl md:text-3xl mb-2">{service.title}</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl md:text-3xl mb-2">{service.title}</CardTitle>
                 <CardDescription className="text-muted-foreground text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
@@ -156,7 +156,7 @@ const Services = () => {
         {/* Why Choose Me Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Por que escolher <span className="text-primary">meus serviços?</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -164,7 +164,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: Shield,
@@ -200,7 +200,7 @@ const Services = () => {
         </div>
 
         {/* Additional Services Info */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           <Card className="bg-gradient-to-br from-card to-card/50 border-border p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center">
@@ -258,10 +258,10 @@ const Services = () => {
               <Sparkles className="w-4 h-4" />
               Vamos Transformar Sua Ideia em Realidade
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Pronto para começar seu <span className="text-primary">projeto?</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Entre em contato e vamos conversar sobre como posso ajudar a levar seu negócio para o próximo nível com soluções digitais de alta qualidade
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -45,7 +45,7 @@ const Links = () => {
         <div className="text-center mb-8 animate-fade-in">
           <div className="relative inline-block mb-6">
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-tech-purple rounded-full blur-2xl opacity-30 animate-pulse" />
-            <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
               <img
                 src={profileLogo}
                 alt="Riann Matheus"
@@ -53,7 +53,7 @@ const Links = () => {
               />
             </div>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             <span className="text-foreground">Riann </span>
             <span className="text-primary">Matheus</span>
           </h1>
@@ -87,9 +87,9 @@ const Links = () => {
                       <Icon className="w-5 h-5" />
                     </div>
                     <div className="text-left flex-1">
-                      <div className="font-semibold text-base">{link.label}</div>
+                      <div className="font-semibold text-sm sm:text-base">{link.label}</div>
                       {link.description && (
-                        <div className="text-xs opacity-90 mt-0.5">{link.description}</div>
+                        <div className="text-xs sm:text-sm opacity-90 mt-0.5">{link.description}</div>
                       )}
                     </div>
                   </div>

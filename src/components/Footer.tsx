@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center gap-6">
           {/* Social Links */}
-          <div className="flex gap-6">
+          <div className="flex gap-4 sm:gap-6">
             <a
               href="https://github.com/Riannm"
               target="_blank"
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <p className="text-muted-foreground text-sm text-center">
+          <p className="text-muted-foreground text-xs sm:text-sm text-center">
             © 2025 Riann Matheus — Todos os direitos reservados.
           </p>
         </div>

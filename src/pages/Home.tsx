@@ -17,11 +17,11 @@ const Home = () => {
             {/* Text Content */}
             <div className="space-y-8 animate-fade-in-up">
               <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   <span className="text-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>Riann </span>
                   <span className="text-primary animate-fade-in" style={{ animationDelay: "0.3s" }}>Matheus</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground font-medium animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
                   Desenvolvedor Fullstack
                 </p>
               </div>
@@ -73,7 +73,7 @@ const Home = () => {
             <p className="text-muted-foreground">Ferramentas que uso para criar soluções profissionais</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: Globe,

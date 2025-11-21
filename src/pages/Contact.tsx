@@ -62,7 +62,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-6 animate-fade-in">
             <div className="bg-card rounded-xl p-6 border border-border">
@@ -162,7 +162,7 @@ const Contact = () => {
         {/* Social Links */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6">Me encontre também em:</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             <Button variant="outline" asChild>
               <a href="https://www.instagram.com/riannmatheus/" target="_blank" rel="noopener noreferrer">
                 Instagram
