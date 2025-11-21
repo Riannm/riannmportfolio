@@ -1,4 +1,4 @@
-import { Github, Instagram, Mail } from "lucide-react";
+import { Github, Instagram, Mail, Linkedin, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,26 +8,40 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex gap-6">
             <a
-              href="https://github.com/riannmatheus"
+              href="https://github.com/Riannm"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="GitHub"
             >
               <Github size={24} />
             </a>
             <a
-              href="https://instagram.com/riannmatheus"
+              href="https://www.instagram.com/riannmatheus/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Instagram"
             >
               <Instagram size={24} />
             </a>
             <a
-              href="mailto:contato@riannmatheus.com"
+              href="https://www.linkedin.com/in/riann-costa/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="LinkedIn"
             >
-              <Mail size={24} />
+              <Linkedin size={24} />
+            </a>
+            <a
+              href="https://wa.me/5533991094120?text=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={24} />
             </a>
           </div>
 

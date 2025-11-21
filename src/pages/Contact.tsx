@@ -3,26 +3,50 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageSquare, Send } from "lucide-react";
 
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  message: string;
+}
+
 const Contact = () => {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const generateWhatsAppLink = (data: FormData): string => {
+    const phoneNumber = "5533991094120";
+    
+    let message = `Olá! Vi seu portfólio e gostaria de entrar em contato.\n\n`;
+    message += `*Meu nome:* ${data.name}\n`;
+    
+    if (data.company) {
+      message += `*Empresa:* ${data.company}\n`;
+    }
+    
+    message += `*Email:* ${data.email}\n\n`;
+    message += `*Mensagem:*\n${data.message}`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato. Responderei em breve!",
-      });
-      setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+    const formData = new FormData(e.currentTarget);
+    const data: FormData = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: (formData.get("company") as string) || "",
+      message: formData.get("message") as string,
+    };
+
+    // Generate WhatsApp link and redirect
+    const whatsappLink = generateWhatsAppLink(data);
+    window.location.href = whatsappLink;
   };
 
   return (
@@ -56,21 +80,19 @@ const Contact = () => {
               <MessageSquare className="w-10 h-10 text-primary mb-4" />
               <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
               <a
-                href="https://wa.me/5531999999999"
+                href="https://wa.me/5533991094120?text=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                +55 (31) 99999-9999
+                (33) 99109-4120
               </a>
             </div>
 
             <div className="bg-gradient-to-br from-primary/10 to-tech-purple/10 rounded-xl p-6 border border-primary/20">
-              <h3 className="text-xl font-bold mb-2">Horário de Atendimento</h3>
+              <h3 className="text-xl font-bold mb-2">Disponibilidade</h3>
               <p className="text-muted-foreground">
-                Segunda a Sexta: 9h às 18h
-                <br />
-                Respondo em até 24 horas
+                Segunda a Sábado: 8h às 18h
               </p>
             </div>
           </div>
@@ -125,7 +147,7 @@ const Contact = () => {
 
               <Button type="submit" className="w-full" disabled={isSubmitting}>
                 {isSubmitting ? (
-                  "Enviando..."
+                  "Redirecionando..."
                 ) : (
                   <>
                     <Send className="mr-2" size={18} />
@@ -140,15 +162,25 @@ const Contact = () => {
         {/* Social Links */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6">Me encontre também em:</h3>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Button variant="outline" asChild>
-              <a href="https://instagram.com/riannmatheus" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/riannmatheus/" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://github.com/riannmatheus" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Riannm" target="_blank" rel="noopener noreferrer">
                 GitHub
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="https://www.linkedin.com/in/riann-costa/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="https://wa.me/5533991094120?text=Olá!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços." target="_blank" rel="noopener noreferrer">
+                WhatsApp
               </a>
             </Button>
           </div>

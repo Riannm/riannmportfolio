@@ -32,7 +32,7 @@ const Home = () => {
 
               <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
                 Especializado em sites institucionais, landing pages, sistemas com login, CRUD, dashboards, blogs e chatbots para WhatsApp. 
-                Inglês fluente e experiência prática desenvolvendo projetos reais e escaláveis.
+                Experiência prática desenvolvendo projetos reais e escaláveis, com foco em performance, segurança e experiência do usuário.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
@@ -85,11 +85,11 @@ const Home = () => {
                 title: "Backend",
                 skills: ["Node.js", "Express", "MySQL", "Supabase", "APIs REST"],
               },
-              {
-                icon: Code2,
-                title: "Outras Skills",
-                skills: ["WordPress", "Git", "Inglês Fluente", "SaaS Development"],
-              },
+            {
+              icon: Code2,
+              title: "Outras Skills",
+              skills: ["WordPress", "Git", "SaaS Development", "PWA", "Responsive Design", "API Integration"],
+            },
             ].map((category, idx) => (
               <div
                 key={idx}

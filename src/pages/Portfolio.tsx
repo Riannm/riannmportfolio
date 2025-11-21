@@ -6,52 +6,38 @@ import { ExternalLink, Github } from "lucide-react";
 const Portfolio = () => {
   const projects = [
     {
-      title: "Site para Empresa de BH",
+      title: "Academia Magis",
       description:
-        "Site institucional moderno e responsivo, com seção de serviços, produtos, contato e blog integrado. Design profissional focado em conversão e experiência do usuário.",
-      tags: ["Next.js", "TailwindCSS", "WordPress", "SEO"],
-      link: "#",
-      github: "#",
+        "Plataforma institucional completa com painel administrativo avançado, dashboard interativo e sistema CRUD totalmente implementado, além de um blog integrado e altamente personalizável. O site foi desenvolvido para apresentar a empresa na internet de forma profissional e moderna, destacando seus conceitos fundamentais, missão e valores com elegância e clareza. A plataforma oferece uma experiência de edição intuitiva através da página administrativa, permitindo atualizações dinâmicas e gestão de conteúdo em tempo real.",
+      tags: ["React", "TypeScript", "Supabase", "Admin Panel", "Blog", "CRUD"],
+      link: "https://academiamagis.com/",
+      github: null,
     },
     {
-      title: "Sistema Completo com Login + CRUD + Admin",
+      title: "Os Trem Geopoéticas",
       description:
-        "Sistema web completo com autenticação segura, dashboard administrativo, gestão de usuários e operações CRUD. Interface intuitiva e segurança robusta.",
-      tags: ["React", "Node.js", "MySQL", "Express"],
-      link: "#",
-      github: "#",
+        "Plataforma institucional inovadora que apresenta o projeto Os Trem Geopoéticas, com destaque para seu mapa interativo colaborativo. O sistema permite que artistas da bacia do rio Doce se localizem geograficamente no mapa, promovendo visibilidade e conexão entre criadores culturais da região. Com um sistema CRUD robusto, painel administrativo completo, blog integrado e recursos avançados de geolocalização, a plataforma oferece uma experiência imersiva para mapear e valorizar a produção artística da região.",
+      tags: ["React", "TypeScript", "Mapas Interativos", "CRUD", "Blog", "Admin Panel"],
+      link: "https://ostremgeopoeticas.netlify.app/",
+      github: null,
     },
     {
-      title: "Landing Page de Alta Conversão",
+      title: "Style Swift",
       description:
-        "Landing page moderna com foco em vendas, copy otimizada e design responsivo. Integração com ferramentas de analytics e formulários de conversão.",
-      tags: ["React", "TailwindCSS", "SEO", "Analytics"],
-      link: "#",
-      github: "#",
+        "Landing page + sistema completo de agendamento para barbearias com tenant, ou seja, usuários criam sua instância e seu link que pode ser usado por outros. Tem temas que podem ser escolhidos, tem pagamento mensal integrado, poder de usuário (pro, básico e médio) e muito mais. O cliente consegue agendar, mas não em horários agendados, o profissional pode bloquear horários e há também o aplicativo PWA.",
+      tags: ["React", "TypeScript", "SaaS", "Multi-tenant", "PWA", "Pagamentos"],
+      link: "https://styleswift.netlify.app/",
+      github: "https://github.com/Riannm/StyleSwift",
+      note: "Banco de dados pausado - não funcionando",
     },
     {
-      title: "Blog com Painel de Postagens",
+      title: "Agenda Clínica",
       description:
-        "Sistema de blog completo com painel administrativo, editor de texto rico, gestão de categorias e tags. Interface moderna para criação e edição de conteúdo.",
-      tags: ["Next.js", "Markdown", "CMS", "Supabase"],
-      link: "#",
-      github: "#",
-    },
-    {
-      title: "Dashboard Analytics",
-      description:
-        "Dashboard interativo para visualização de dados e métricas de negócio. Gráficos dinâmicos, filtros avançados e relatórios personalizáveis.",
-      tags: ["React", "TypeScript", "Charts", "API"],
-      link: "#",
-      github: "#",
-    },
-    {
-      title: "E-commerce Completo",
-      description:
-        "Plataforma de e-commerce com carrinho de compras, gestão de produtos, painel administrativo e integração com gateway de pagamento.",
-      tags: ["Next.js", "Node.js", "Stripe", "MySQL"],
-      link: "#",
-      github: "#",
+        "Sistema completo de agendamento para clínicas com tenant, onde usuários criam sua instância e seu link personalizado. Possui temas customizáveis, pagamento mensal integrado, níveis de usuário (pro, básico e médio), bloqueio de horários, aplicativo PWA e muito mais. O cliente consegue agendar consultas, mas não em horários já ocupados, e o profissional tem controle total sobre a agenda.",
+      tags: ["React", "TypeScript", "SaaS", "Multi-tenant", "PWA", "Supabase"],
+      link: "https://agendaclinica.netlify.app/",
+      github: "https://github.com/Riannm/grace-bookings",
+      note: "Banco de dados pausado - não funcionando",
     },
   ];
 
@@ -91,19 +77,28 @@ const Portfolio = () => {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1" asChild>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2" size={16} />
-                    Demo
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" className="flex-1" asChild>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2" size={16} />
-                    Código
-                  </a>
-                </Button>
+              <CardFooter className="flex flex-col gap-2">
+                {project.note && (
+                  <p className="text-xs text-muted-foreground italic w-full text-center pb-2">
+                    {project.note}
+                  </p>
+                )}
+                <div className="flex gap-2 w-full">
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2" size={16} />
+                      Demo
+                    </a>
+                  </Button>
+                  {project.github && (
+                    <Button variant="outline" size="sm" className="flex-1" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2" size={16} />
+                        Código
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </CardFooter>
             </Card>
           ))}

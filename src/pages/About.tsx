@@ -18,15 +18,17 @@ const About = () => {
         <div className="bg-card rounded-2xl p-8 border border-border mb-12 animate-scale-in">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             Tenho 18 anos, formação técnica em Informática pelo Instituto Federal de Minas Gerais e inglês fluente. 
-            Sou apaixonado por tecnologia, criação e inovação.
+            Sou apaixonado por tecnologia, criação e inovação, sempre buscando aprender e aplicar as melhores práticas do mercado.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             Atuo desenvolvendo sites e sistemas completos, sempre buscando resolver problemas reais de empresas e 
-            transformar ideias em produtos digitais funcionais e modernos.
+            transformar ideias em produtos digitais funcionais e modernos. Foco em criar soluções escaláveis, 
+            performáticas e com excelente experiência do usuário.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Já trabalhei com empresas de Belo Horizonte, desenvolvi sistemas completos para diversos nichos e busco 
-            sempre evoluir como criador e desenvolvedor.
+            Já trabalhei com empresas de Belo Horizonte, desenvolvi sistemas SaaS multi-tenant, plataformas com mapas interativos, 
+            sistemas de agendamento e muito mais. Busco sempre evoluir como criador e desenvolvedor, explorando novas tecnologias 
+            e metodologias para entregar resultados excepcionais.
           </p>
         </div>
 
@@ -39,19 +41,19 @@ const About = () => {
               description: "Técnico em Informática - Instituto Federal de Minas Gerais",
             },
             {
-              icon: Globe,
-              title: "Idiomas",
-              description: "Inglês Fluente • Português Nativo",
+              icon: Code,
+              title: "Especialidades",
+              description: "Fullstack Development • SaaS • Multi-tenant Systems",
             },
             {
               icon: Award,
               title: "Experiência",
-              description: "Projetos reais para empresas e diversos nichos",
+              description: "Projetos reais para empresas, sistemas escaláveis e soluções inovadoras",
             },
             {
-              icon: Code,
-              title: "Especialidades",
-              description: "Fullstack Development • SaaS • Web Systems",
+              icon: Globe,
+              title: "Idiomas",
+              description: "Inglês Fluente • Português Nativo",
             },
           ].map((item, idx) => (
             <div
@@ -95,7 +97,7 @@ const About = () => {
             <div>
               <h3 className="text-lg font-semibold mb-3 text-primary">Ferramentas & Outros</h3>
               <div className="flex flex-wrap gap-2">
-                {["Git", "WordPress", "SaaS Development", "Responsive Design", "SEO"].map((tech) => (
+                {["Git", "WordPress", "SaaS Development", "Multi-tenant Architecture", "PWA", "Responsive Design", "SEO", "API Integration", "Database Design"].map((tech) => (
                   <span key={tech} className="bg-card px-4 py-2 rounded-lg border border-border text-sm">
                     {tech}
                   </span>
@@ -107,7 +109,7 @@ const About = () => {
           <div className="mt-8 pt-6 border-t border-border">
             <h3 className="text-lg font-semibold mb-3 text-center">Diferenciais</h3>
             <div className="flex flex-wrap justify-center gap-3">
-              {["Inglês Fluente", "Comunicação Forte", "Liderança em Projetos"].map((diff) => (
+              {["Arquitetura Escalável", "Código Limpo e Documentado", "Foco em Performance", "Soluções SaaS", "Experiência com Projetos Reais", "Inglês Fluente"].map((diff) => (
                 <span key={diff} className="bg-primary/10 text-primary px-4 py-2 rounded-lg border border-primary/30 font-medium">
                   {diff}
                 </span>

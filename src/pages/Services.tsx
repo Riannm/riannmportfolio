@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Globe, Zap, Code, Wrench, Check } from "lucide-react";
+import { Globe, Zap, Code, Wrench, Check, ArrowRight, Sparkles, Shield, Clock, Rocket } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -69,49 +69,84 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-primary">Serviços</span> & Soluções
+        {/* Hero Section */}
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Sparkles className="w-4 h-4" />
+            Soluções Digitais Completas
+          </div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-foreground">Serviços</span>{" "}
+            <span className="text-primary">& Soluções</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Desenvolvimento web profissional para empresas e empreendedores que buscam presença digital de qualidade
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Desenvolvimento web profissional para empresas e empreendedores que buscam presença digital de qualidade e resultados reais
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
           {services.map((service, idx) => (
             <Card
               key={idx}
-              className={`bg-card border-border hover:border-primary/50 transition-all hover-scale animate-fade-in ${
-                service.highlight ? "border-primary ring-2 ring-primary/20" : ""
+              className={`group relative bg-card border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in overflow-hidden ${
+                service.highlight 
+                  ? "border-primary shadow-lg ring-4 ring-primary/10" 
+                  : "border-border"
               }`}
               style={{ animationDelay: `${idx * 100}ms` }}
             >
-              <CardHeader>
-                <service.icon className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground text-base">
+              {/* Highlight Badge */}
+              {service.highlight && (
+                <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold">
+                  Mais Popular
+                </div>
+              )}
+
+              <CardHeader className="pb-4">
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 ${
+                  service.highlight 
+                    ? "bg-primary/20 text-primary" 
+                    : "bg-primary/10 text-primary"
+                }`}>
+                  <service.icon className="w-8 h-8" />
+                </div>
+                <CardTitle className="text-2xl md:text-3xl mb-2">{service.title}</CardTitle>
+                <CardDescription className="text-muted-foreground text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              
+              <CardContent className="pb-4">
                 <ul className="space-y-3">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      <span>{feature}</span>
+                    <li key={i} className="flex items-start gap-3 text-muted-foreground group/item">
+                      <div className="mt-0.5">
+                        <Check className="w-5 h-5 text-primary shrink-0" />
+                      </div>
+                      <span className="group-hover/item:text-foreground transition-colors">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="flex-col items-start gap-4">
-                <div className="w-full pt-4 border-t border-border">
-                  <p className="text-2xl font-bold text-primary">{service.price}</p>
+              
+              <CardFooter className="flex-col items-stretch gap-4 pt-6 border-t border-border">
+                <div className="flex items-baseline justify-between w-full">
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">Investimento</p>
+                    <p className="text-3xl font-bold text-primary">{service.price}</p>
+                  </div>
                 </div>
-                <Button className="w-full" variant={service.highlight ? "default" : "outline"} asChild>
-                  <a href="/contact">Solicitar Orçamento</a>
+                <Button 
+                  className="w-full group/btn" 
+                  variant={service.highlight ? "default" : "outline"}
+                  size="lg"
+                  asChild
+                >
+                  <a href="/contact" className="flex items-center justify-center">
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
                 </Button>
               </CardFooter>
             </Card>
@@ -119,41 +154,129 @@ const Services = () => {
         </div>
 
         {/* Why Choose Me Section */}
-        <div className="bg-section-bg rounded-2xl p-8 md:p-12 border border-border">
-          <h2 className="text-3xl font-bold mb-8 text-center">Por que escolher meus serviços?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Por que escolher <span className="text-primary">meus serviços?</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Comprometimento com qualidade, comunicação clara e entregas que superam expectativas
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
+                icon: Shield,
                 title: "Qualidade Profissional",
-                description: "Código limpo, documentado e seguindo as melhores práticas do mercado.",
+                description: "Código limpo, documentado e seguindo as melhores práticas do mercado. Projetos escaláveis e bem estruturados.",
+                color: "text-blue-500",
+                bgColor: "bg-blue-500/10",
               },
               {
-                title: "Comunicação Fluente",
-                description: "Inglês fluente e comunicação clara em todas as etapas do projeto.",
+                icon: Rocket,
+                title: "Soluções Inovadoras",
+                description: "Desenvolvimento de sistemas modernos com arquitetura escalável e tecnologias de ponta. Foco em criar soluções que crescem com seu negócio.",
+                color: "text-purple-500",
+                bgColor: "bg-purple-500/10",
               },
               {
+                icon: Clock,
                 title: "Entrega no Prazo",
-                description: "Comprometimento com prazos e entregas de qualidade dentro do cronograma.",
+                description: "Comprometimento com prazos e entregas de qualidade dentro do cronograma estabelecido.",
+                color: "text-green-500",
+                bgColor: "bg-green-500/10",
               },
             ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
+              <Card key={idx} className="bg-card border-border hover:border-primary/50 transition-all hover:shadow-lg text-center p-8">
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 ${item.bgColor} ${item.color}`}>
+                  <item.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+              </Card>
             ))}
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center bg-gradient-to-br from-primary/10 to-tech-purple/10 rounded-2xl p-12 border border-primary/20">
-          <h2 className="text-3xl font-bold mb-4">Pronto para começar seu projeto?</h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Entre em contato e vamos conversar sobre como posso ajudar a levar seu negócio para o próximo nível
-          </p>
-          <Button size="lg" asChild>
-            <a href="/contact">Solicitar Orçamento Gratuito</a>
-          </Button>
+        {/* Additional Services Info */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+          <Card className="bg-gradient-to-br from-card to-card/50 border-border p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center">
+                <Code className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold">Tecnologias Modernas</h3>
+            </div>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Utilizo as tecnologias mais atuais do mercado para garantir performance, segurança e escalabilidade em todos os projetos.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {["React", "TypeScript", "Next.js", "Supabase", "TailwindCSS", "Node.js", "PostgreSQL", "Vite"].map((tech) => (
+                <span 
+                  key={tech} 
+                  className="bg-primary/10 text-primary px-4 py-2 rounded-lg text-sm font-medium border border-primary/20 hover:bg-primary/20 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </Card>
+          
+          <Card className="bg-gradient-to-br from-card to-card/50 border-border p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center">
+                <Wrench className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold">Suporte Contínuo</h3>
+            </div>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Ofereço suporte técnico e manutenção contínua para garantir que seu projeto sempre funcione perfeitamente.
+            </p>
+            <ul className="space-y-3">
+              {[
+                "Atualizações de segurança regulares",
+                "Correção rápida de bugs",
+                "Melhorias e otimizações contínuas",
+                "Backup automático e monitoramento",
+                "Suporte prioritário via WhatsApp",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-muted-foreground">
+                  <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
         </div>
+
+        {/* CTA Section */}
+        <Card className="relative overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-tech-purple/10">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="relative text-center p-12 md:p-16">
+            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4" />
+              Vamos Transformar Sua Ideia em Realidade
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Pronto para começar seu <span className="text-primary">projeto?</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              Entre em contato e vamos conversar sobre como posso ajudar a levar seu negócio para o próximo nível com soluções digitais de alta qualidade
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="group" asChild>
+                <a href="/contact" className="flex items-center">
+                  Solicitar Orçamento Gratuito
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="/portfolio">Ver Meus Projetos</a>
+              </Button>
+            </div>
+          </div>
+        </Card>
       </div>
     </div>
   );
