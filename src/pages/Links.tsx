@@ -14,7 +14,7 @@ const Links = () => {
   const links = [
     {
       id: "contact",
-      label: "Entre em contato comigo",
+      label: "Entre em contato comigo agora",
       url: "https://wa.me/5533991094120?text=Olá!%20Vi%20seu%20perfil%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.",
       icon: MessageCircle,
       color: "bg-[#25D366] hover:bg-[#20BA5A] text-white",
