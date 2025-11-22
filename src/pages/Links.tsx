@@ -29,6 +29,14 @@ const Links = () => {
       description: "Explore meus projetos e serviços",
     },
     {
+      id: "youtube",
+      label: "Canal do YouTube",
+      url: "https://www.youtube.com/channel/UC46u1rJgxOzzR7xfoMts8GA",
+      icon: ExternalLink,
+      color: "bg-[#FF0000] hover:bg-[#cc0000] text-white",
+      description: "Conteúdos completos e tutoriais",
+    },
+    {
       id: "lovable",
       label: "Conheça a Lovable",
       url: "https://lovable.dev/invite/YBJMPNZ",
