@@ -72,7 +72,7 @@ const Home = () => {
           <div className="bg-card rounded-3xl p-8 md:p-12 border border-border">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-                Projetos desenvolvidos para <span className="text-primary">empresas de Minas Gerais</span>
+                Projetos desenvolvidos para <span className="text-primary">empresas</span>
               </h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
                 Incluindo plataformas completas, sistemas SaaS multi-tenant e ferramentas internas
@@ -80,7 +80,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="space-y-2">
                 <div className="text-3xl font-bold text-primary">+12</div>
                 <div className="text-muted-foreground">Projetos Entregues</div>
@@ -88,10 +88,6 @@ const Home = () => {
               <div className="space-y-2">
                 <div className="text-3xl font-bold text-primary">5+</div>
                 <div className="text-muted-foreground">Empresas Atendidas</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">BH</div>
-                <div className="text-muted-foreground">e região metropolitana</div>
               </div>
               <div className="space-y-2">
                 <div className="text-3xl font-bold text-primary">100%</div>

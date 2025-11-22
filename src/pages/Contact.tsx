@@ -83,7 +83,7 @@ const Contact = () => {
             <div className="flex justify-center mb-2">
               <Shield className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-bold mb-1">Clientes de MG</h3>
+            <h3 className="font-bold mb-1">Clientes em MG</h3>
             <p className="text-sm text-muted-foreground">Incluindo Belo Horizonte</p>
           </div>
         </div>
@@ -235,16 +235,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Closing Message */}
-        <div className="mt-16 text-center text-muted-foreground">
-          <div className="inline-flex items-center gap-4 bg-card p-4 rounded-xl border border-border">
-            <Shield className="w-5 h-5 text-primary" />
-            <p className="text-sm">
-              🔒 Seus dados estão seguros.
-              📌 Respondo sempre com clareza, honestidade e sem enrolação.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );
