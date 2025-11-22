@@ -17,7 +17,7 @@ const About = () => {
         {/* Main Bio */}
         <div className="bg-card rounded-2xl p-8 border border-border mb-12 animate-scale-in-center smooth-transition hover-lift">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Tenho 18 anos, formação técnica em Informática pelo Instituto Federal de Minas Gerais e inglês fluente. 
+            Tenho 18 anos, formação técnica em Informática pelo Instituto Federal de Minas Gerais. 
             Sou apaixonado por tecnologia, criação e inovação, sempre buscando aprender e aplicar as melhores práticas do mercado.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -53,7 +53,7 @@ const About = () => {
             {
               icon: Globe,
               title: "Idiomas",
-              description: "Inglês Fluente • Português Nativo",
+              description: "Português Nativo • Inglês Fluente • Francês Básico ",
             },
           ].map((item, idx) => (
             <div
