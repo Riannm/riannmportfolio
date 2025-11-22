@@ -6,38 +6,42 @@ import { ExternalLink, Github } from "lucide-react";
 const Portfolio = () => {
   const projects = [
     {
-      title: "Academia Magis",
-      description:
-        "Plataforma institucional completa com painel administrativo avançado, dashboard interativo e sistema CRUD totalmente implementado, além de um blog integrado e altamente personalizável. O site foi desenvolvido para apresentar a empresa na internet de forma profissional e moderna, destacando seus conceitos fundamentais, missão e valores com elegância e clareza. A plataforma oferece uma experiência de edição intuitiva através da página administrativa, permitindo atualizações dinâmicas e gestão de conteúdo em tempo real.",
-      tags: ["React", "TypeScript", "Supabase", "Admin Panel", "Blog", "CRUD"],
+      title: "Academia Magis — Plataforma Institucional Completa",
+      summary: "Site institucional + painel administrativo com blog, CRUD e dashboard. Desenvolvido para posicionar a Magis Academia de forma profissional e reforçar sua marca na internet.",
+      challenge: "Criar uma plataforma robusta que permitisse gestão de conteúdo em tempo real e apresentação clara da missão e valores da empresa.",
+      solution: "Desenvolvi um sistema completo com login, admin avançado, editor de conteúdo e blog dinâmico, além de uma interface moderna e responsiva.",
+      tags: ["React", "TypeScript", "Supabase", "Admin Panel", "CRUD", "Blog"],
       link: "https://academiamagis.com/",
       github: null,
     },
     {
-      title: "Os Trem Geopoéticas",
-      description:
-        "Plataforma institucional inovadora que apresenta o projeto Os Trem Geopoéticas, com destaque para seu mapa interativo colaborativo. O sistema permite que artistas da bacia do rio Doce se localizem geograficamente no mapa, promovendo visibilidade e conexão entre criadores culturais da região. Com um sistema CRUD robusto, painel administrativo completo, blog integrado e recursos avançados de geolocalização, a plataforma oferece uma experiência imersiva para mapear e valorizar a produção artística da região.",
+      title: "Os Trem Geopoéticas — Mapa Interativo Colaborativo",
+      summary: "Plataforma institucional com mapa interativo para artistas da bacia do Rio Doce se localizarem e conectarem.",
+      challenge: "Criar uma solução que agregasse artistas geograficamente, permitindo visibilidade e fácil gestão de conteúdo.",
+      solution: "Desenvolvi um sistema com CRUD completo, painel administrativo e recursos avançados de geolocalização, além de um blog integrado.",
       tags: ["React", "TypeScript", "Mapas Interativos", "CRUD", "Blog", "Admin Panel"],
       link: "https://ostremgeopoeticas.netlify.app/",
       github: null,
     },
     {
-      title: "Style Swift",
-      description:
-        "Landing page + sistema completo de agendamento para barbearias com tenant, ou seja, usuários criam sua instância e seu link que pode ser usado por outros. Tem temas que podem ser escolhidos, tem pagamento mensal integrado, poder de usuário (pro, básico e médio) e muito mais. O cliente consegue agendar, mas não em horários agendados, o profissional pode bloquear horários e há também o aplicativo PWA.",
+      title: "Style Swift — SaaS Multi-tenant para Barbearias",
+      status: "versão atual em manutenção para revisão de infraestrutura",
+      summary: "Sistema SaaS onde cada barbeiro cria sua própria instância e link personalizado. Inclui agendamentos, temas customizáveis, assinaturas e PWA.",
+      challenge: "Criar um SaaS multi-tenant escalável, moderno e fácil de usar por profissionais da área.",
+      solution: "Desenvolvi sistema com controle de agenda avançado, níveis de usuário, pagamentos recorrentes e interface totalmente personalizável.",
       tags: ["React", "TypeScript", "SaaS", "Multi-tenant", "PWA", "Pagamentos"],
       link: "https://styleswift.netlify.app/",
       github: "https://github.com/Riannm/StyleSwift",
-      note: "Banco de dados pausado - não funcionando",
     },
     {
-      title: "Agenda Clínica",
-      description:
-        "Sistema completo de agendamento para clínicas com tenant, onde usuários criam sua instância e seu link personalizado. Possui temas customizáveis, pagamento mensal integrado, níveis de usuário (pro, básico e médio), bloqueio de horários, aplicativo PWA e muito mais. O cliente consegue agendar consultas, mas não em horários já ocupados, e o profissional tem controle total sobre a agenda.",
+      title: "Agenda Clínica — SaaS Multi-tenant para Clínicas",
+      status: "versão atual em manutenção para migração de infraestrutura",
+      summary: "Sistema completo de agendamento para clínicas, com múltiplos níveis de usuário, temas personalizados e PWA.",
+      challenge: "Criar um sistema escalável que atendesse diferentes clínicas com agendas independentes.",
+      solution: "Desenvolvi um SaaS totalmente multi-tenant, com bloqueio inteligente de horários e instâncias separadas por clínica.",
       tags: ["React", "TypeScript", "SaaS", "Multi-tenant", "PWA", "Supabase"],
       link: "https://agendaclinica.netlify.app/",
       github: "https://github.com/Riannm/grace-bookings",
-      note: "Banco de dados pausado - não funcionando",
     },
   ];
 
@@ -50,12 +54,12 @@ const Portfolio = () => {
             Meu <span className="text-primary">Portfólio</span>
           </h1>
           <p className="text-xl text-muted-foreground">
-            Projetos desenvolvidos com tecnologias modernas e foco em resultados
+            Projetos desenvolvidos com tecnologias modernas, arquitetura sólida e foco em resultados reais para empresas e criadores.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-12">
           {projects.map((project, idx) => (
             <Card
               key={idx}
@@ -63,27 +67,39 @@ const Portfolio = () => {
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
+                <CardTitle className="text-2xl text-primary">{project.title}</CardTitle>
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-semibold text-lg text-foreground">Resumo:</h3>
+                  <p className="text-muted-foreground">{project.summary}</p>
                 </div>
-              </CardContent>
-              <CardFooter className="flex flex-col gap-2">
-                {project.note && (
-                  <p className="text-xs text-muted-foreground italic w-full text-center pb-2">
-                    {project.note}
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <h3 className="font-semibold text-lg text-primary">Desafio:</h3>
+                  <p className="text-muted-foreground">{project.challenge}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg text-primary">Solução:</h3>
+                  <p className="text-muted-foreground">{project.solution}</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg text-primary">Tecnologias:</h3>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-sm">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                {project.status && (
+                  <p className="text-sm text-muted-foreground italic">
+                    ({project.status})
                   </p>
                 )}
-                <div className="flex gap-2 w-full">
+              </CardContent>
+              <CardFooter className="flex flex-col gap-2">
+                <div className="flex gap-2 w-full max-w-md mx-auto">
                   <Button variant="outline" size="sm" className="flex-1" asChild>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2" size={16} />
@@ -106,12 +122,12 @@ const Portfolio = () => {
 
         {/* CTA Section */}
         <div className="mt-20 text-center bg-card rounded-2xl p-12 border border-border">
-          <h2 className="text-3xl font-bold mb-4">Tem um projeto em mente?</h2>
+          <h2 className="text-3xl font-bold mb-4">Tem uma ideia?</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Vamos conversar sobre como posso ajudar a transformar sua ideia em realidade
+            Posso transformar seu projeto em uma solução digital moderna e escalável.
           </p>
           <Button size="lg" asChild>
-            <a href="/contact">Entrar em Contato</a>
+            <a href="/contact">Entre em Contato</a>
           </Button>
         </div>
       </div>
