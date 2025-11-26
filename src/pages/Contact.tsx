@@ -18,7 +18,7 @@ const Contact = () => {
   const generateWhatsAppLink = (data: FormData): string => {
     const phoneNumber = "5533991094120";
 
-    let message = `Olá! Vi seu portfólio e gostaria de entrar em contato.\n\n`;
+    let message = `Olá! Vi seu portfólio e gostaria de entrar em contato para saber mais.\n\n`;
     message += `*Meu nome:* ${data.name}\n`;
 
     if (data.company) {
